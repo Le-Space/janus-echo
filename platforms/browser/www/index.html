@@ -7,7 +7,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Janus WebRTC Gateway: Echo Test</title>
-<script src="cordova.js"></script>
+
 <script type="text/javascript" src="jquery.min.js" ></script>
 <script type="text/javascript" src="jquery.blockUI.js" ></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
@@ -15,21 +15,15 @@
 <script type="text/javascript" src="js/spin.min.js"></script>
 <script type="text/javascript" src="janus.js" ></script>
 <script type="text/javascript" src="echotest.js"></script>
- <script>
+<!--  <script>
  function onDeviceReady()  {
-  // Just for iOS devices.
-
-   alert('device ready.');
-     alert('now registering globals done');
   if (window.device.platform === 'iOS') {
-  	alert('now registering globals for ios');
     cordova.plugins.iosrtc.registerGlobals();
-    alert('now registering globals done');
   }
 }
- alert('bla');
 	document.addEventListener("deviceready", onDeviceReady, false);
  </script>
+ <script src="cordova.js"></script> -->
 <!-- <script>
 	$(function() {
 		$(".navbar-static-top").load("navbar.html", function() {

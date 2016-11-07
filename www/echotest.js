@@ -20,7 +20,7 @@
 // If you want to use the WebSockets frontend to Janus, instead, you'll
 // have to pass a different kind of address, e.g.:
 //
-var server = "ws://www.le-space.de:8188/janus";
+	var server = "ws://www.le-space.de:8188/janus";
 //
 // Of course this assumes that support for WebSockets has been built in
 // when compiling the gateway. WebSockets support has not been tested
@@ -57,10 +57,6 @@ var spinner = null;
 var audioenabled = false;
 var videoenabled = false;
 
-
-// Just for Cordova apps.
-
-//});
 $(document).ready(function() {
 	// Initialize the library (all console debuggers enabled)
 	Janus.init({debug: "all", callback: function() {

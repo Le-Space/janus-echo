@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' data:* gap:* tel:* 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'" />
+<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data:* gap:* tel:* 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'" /> -->
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Janus WebRTC Gateway: Echo Test</title>
-<script src="cordova.js"></script>
+
 <script type="text/javascript" src="jquery.min.js" ></script>
 <script type="text/javascript" src="jquery.blockUI.js" ></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
@@ -15,7 +15,7 @@
 <script type="text/javascript" src="js/spin.min.js"></script>
 <script type="text/javascript" src="janus.js" ></script>
 <script type="text/javascript" src="echotest.js"></script>
- <script>
+<script>
  function onDeviceReady()  {
   if (window.device.platform === 'iOS') {
     cordova.plugins.iosrtc.registerGlobals();
@@ -23,6 +23,7 @@
 }
 	document.addEventListener("deviceready", onDeviceReady, false);
  </script>
+ <script src="cordova.js"></script> 
 <!-- <script>
 	$(function() {
 		$(".navbar-static-top").load("navbar.html", function() {
