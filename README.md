@@ -8,7 +8,7 @@ A WebRTC Echo-Test mobile-app for android and browser. Sends video and audio to 
 3. Change Janus-Server under www/echotest.js to your Janus instance 
 	```var server = "ws://www.le-space.de:8188/janus";```
 4. Run and test cordova app in browser ```cordova run browser```
-5. Run and test cordova app in browser 
+5. Run and test cordova app with your Android phone 
 	- Connect your mobile with a cable 
 	- ```cordova run android```
 
