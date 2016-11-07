@@ -6,7 +6,7 @@ A WebRTC Echo-Test mobile-app for android and browser. Sends video and audio to 
 1. Checkout this repository
 2. Install cordova ```sudo npm install -g cordova``` (npm should be installed)
 3. Change Janus-Server under www/echotest.js to your Janus instance 
-``var server = "ws://www.le-space.de:8188/janus";``
+	```var server = "ws://www.le-space.de:8188/janus";```
 4. Run and test cordova app in browser ```cordova run browser```
 5. Run and test cordova app in browser 
 	- Connect your mobile with a cable 
