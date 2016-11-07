@@ -40,13 +40,10 @@
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <config-file parent="NSCameraUsageDescription" target="*-Info.plist">
-        <string>Blink uses your camera to make video calls.</string>
-    </config-file>
-    <config-file parent="NSContactsUsageDescription" target="*-Info.plist">
-        <string>Blink needs access to your contacts in order to be able to call them.</string>
+        <string>App uses your camera to make video calls.</string>
     </config-file>
     <config-file parent="NSMicrophoneUsageDescription" target="*-Info.plist">
-        <string>Blink uses your microphone to make calls.</string>
+        <string>App uses your microphone to make calls.</string>
     </config-file>
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="BackupWebStorage" value="cloud" />

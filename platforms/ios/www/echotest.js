@@ -57,19 +57,11 @@ var spinner = null;
 var audioenabled = false;
 var videoenabled = false;
 
+
+// Just for Cordova apps.
+
+//});
 $(document).ready(function() {
-                 // alert(device.cordova);
-                 // if (window.device.platform === 'iOS') {
-                  alert('okey is ios!');
-                  //  alert(device.cordova);
-                     alert('now registering globals');
-                  cordova.plugins.iosrtc.registerGlobals();
-                 
-                 alert('now registering globals done');
-                   //alert(device.cordova);
-                 
-                  
-                 // }
 	// Initialize the library (all console debuggers enabled)
 	Janus.init({debug: "all", callback: function() {
 		// Use a button to start the demo
@@ -79,10 +71,10 @@ $(document).ready(function() {
 			started = true;
 			$(this).attr('disabled', true).unbind('click');
 			// Make sure the browser supports WebRTC
-			/*if(!Janus.isWebrtcSupported()) {
+			if(!Janus.isWebrtcSupported()) {
 				bootbox.alert("No WebRTC support... ");
 				return;
-			}*/
+			}
 			// Create session
 			janus = new Janus(
 				{
