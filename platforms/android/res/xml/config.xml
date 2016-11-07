@@ -4,6 +4,9 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
     <name>Janus-Echo</name>
     <description>
         A WebRTC Echo-Test mobile-app for android and browser. Sends video and audio to a server and receives it.  

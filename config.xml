@@ -22,5 +22,12 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <config-file parent="NSCameraUsageDescription" target="*-Info.plist">
+    <string>App uses your camera to make video calls.</string>
+    </config-file>
+    <config-file parent="NSMicrophoneUsageDescription" target="*-Info.plist">
+    <string>App uses your microphone to make calls.</string>
+    </config-file>
     </platform>
+
 </widget>
