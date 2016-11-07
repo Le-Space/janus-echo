@@ -2,7 +2,7 @@
 <widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Janus-Echo</name>
     <description>
-        A WebRTC Echo-Test mobile-app for ios, android and browser. Sends video and audio to a server and receives it.  
+        A WebRTC Echo-Test mobile-app for android and browser. Sends video and audio to a server and receives it.  
     </description>
     <author email="nico@le-space.de" href="http://www.le-space.de">
         Le Space UG (haftungsbeschränkt)
