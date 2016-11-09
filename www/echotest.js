@@ -77,7 +77,9 @@ $(document).ready(function() {
 					server: server,
 					// No "iceServers" is provided, meaning janus.js will use a default STUN server
 					// Here are some examples of how an iceServers field may look like to support TURN
-					// 		iceServers: [{urls: "turn:yourturnserver.com:3478", username: "janususer", credential: "januspwd"}],
+					
+ 					//iceServers: [{"urls":["stun:5.9.154.226:3478","stun:stun.l.google.com:19302","stun:stun1.l.google.com:19302","stun:stun2.l.google.com:19302","stun:stun3.l.google.com:19302","stun:stun4.l.google.com:19302","stun:stun.ekiga.net","stun:stun.ideasip.com","stun:stun.schlund.de","stun:stun.voiparound.com","stun:stun.voipbuster.com","stun:stun.voipstunt.com","stun:stun.voxgratia.org","stun:stun.services.mozilla.com"]},{"urls":["turn:5.9.154.226:3478"],"username":"akashionata","credential":"silkroad2015"}],
+					iceServers: [{urls: "turn:www.le-space.de:3478", username: "akashionata", credential: "silkroad2015"}],
 					// 		iceServers: [{urls: "turn:yourturnserver.com:443?transport=tcp", username: "janususer", credential: "januspwd"}],
 					// 		iceServers: [{urls: "turns:yourturnserver.com:443?transport=tcp", username: "janususer", credential: "januspwd"}],
 					// Should the Janus API require authentication, you can specify either the API secret or user token here too
