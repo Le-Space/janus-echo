@@ -58,10 +58,25 @@ var audioenabled = false;
 var videoenabled = false;
 
 $(document).ready(function() {
+
+
+
+$('#toggle_fullscreen').on('click', function(){
+  	fullscreen();
+});
+	
 	// Initialize the library (all console debuggers enabled)
 	Janus.init({debug: "all", callback: function() {
 		// Use a button to start the demo
-		$('#start').click(function() {
+
+		start();
+
+	}});
+});
+
+
+function start(){
+		//	$('#start').click(function() {
 			if(started)
 				return;
 			started = true;
@@ -78,9 +93,9 @@ $(document).ready(function() {
 					// No "iceServers" is provided, meaning janus.js will use a default STUN server
 					// Here are some examples of how an iceServers field may look like to support TURN
 					
- 					//iceServers: [{"urls":["stun:5.9.154.226:3478","stun:stun.l.google.com:19302","stun:stun1.l.google.com:19302","stun:stun2.l.google.com:19302","stun:stun3.l.google.com:19302","stun:stun4.l.google.com:19302","stun:stun.ekiga.net","stun:stun.ideasip.com","stun:stun.schlund.de","stun:stun.voiparound.com","stun:stun.voipbuster.com","stun:stun.voipstunt.com","stun:stun.voxgratia.org","stun:stun.services.mozilla.com"]},{"urls":["turn:5.9.154.226:3478"],"username":"akashionata","credential":"silkroad2015"}],
-					iceServers: [{urls: "turn:www.le-space.de:3478", username: "akashionata", credential: "silkroad2015"}],
-					// 		iceServers: [{urls: "turn:yourturnserver.com:443?transport=tcp", username: "janususer", credential: "januspwd"}],
+ 					 	iceServers: [{urls:["stun:5.9.154.226:3478","stun:stun.l.google.com:19302","stun:stun1.l.google.com:19302","stun:stun2.l.google.com:19302","stun:stun3.l.google.com:19302","stun:stun4.l.google.com:19302","stun:stun.ekiga.net","stun:stun.ideasip.com","stun:stun.schlund.de","stun:stun.voiparound.com","stun:stun.voipbuster.com","stun:stun.voipstunt.com","stun:stun.voxgratia.org","stun:stun.services.mozilla.com"]},{"urls":["turn:5.9.154.226:3478"],"username":"akashionata","credential":"silkroad2015"}],
+					 //iceServers: [{urls: "turn:5.9.154.226:3478", username: "akashionata", credential: "silkroad2015"}],
+					//		iceServers: [{urls: "turn:yourturnserver.com:443?transport=tcp", username: "janususer", credential: "januspwd"}],
 					// 		iceServers: [{urls: "turns:yourturnserver.com:443?transport=tcp", username: "janususer", credential: "januspwd"}],
 					// Should the Janus API require authentication, you can specify either the API secret or user token here too
 					//		token: "mytoken",
@@ -181,28 +196,28 @@ $(document).ready(function() {
 								onlocalstream: function(stream) {
 									Janus.debug(" ::: Got a local stream :::");
 									Janus.debug(JSON.stringify(stream));
-									if($('#myvideo').length === 0) {
-										$('#videos').removeClass('hide').show();
-										$('#videoleft').append('<video class="rounded centered" id="myvideo" width=320 height=240 autoplay muted="muted"/>');
-									}
-									Janus.attachMediaStream($('#myvideo').get(0), stream);
-									$("#myvideo").get(0).muted = "muted";
-									$("#videoleft").parent().block({
-										message: '<b>Publishing...</b>',
-										css: {
-											border: 'none',
-											backgroundColor: 'transparent',
-											color: 'white'
-										}
-									});
-									// No remote video yet
-									$('#videoright').append('<video class="rounded centered" id="waitingvideo" width=320 height=240 />');
-									if(spinner == null) {
-										var target = document.getElementById('videoright');
-										spinner = new Spinner({top:100}).spin(target);
-									} else {
-										spinner.spin();
-									}
+									// if($('#myvideo').length === 0) {
+									// 	$('#videos').removeClass('hide').show();
+									// 	// $('#videoleft').append('<video class="rounded centered" id="myvideo" width=320 height=240 autoplay muted="muted"/>');
+									// }
+									//Janus.attachMediaStream($('#myvideo').get(0), stream);
+									// $("#myvideo").get(0).muted = "muted";
+									// $("#videoleft").parent().block({
+									// 	message: '<b>Publishing...</b>',
+									// 	css: {
+									// 		border: 'none',
+									// 		backgroundColor: 'transparent',
+									// 		color: 'white'
+									// 	}
+									// });
+									// // No remote video yet
+									// $('#videoright').append('<video class="rounded centered" id="waitingvideo" width=320 height=240 />');
+									// if(spinner == null) {
+									// 	var target = document.getElementById('videoright');
+									// 	spinner = new Spinner({top:100}).spin(target);
+									// } else {
+									// 	spinner.spin();
+									// }
 									var videoTracks = stream.getVideoTracks();
 									if(videoTracks === null || videoTracks === undefined || videoTracks.length === 0) {
 										// No webcam
@@ -217,10 +232,16 @@ $(document).ready(function() {
 								onremotestream: function(stream) {
 									Janus.debug(" ::: Got a remote stream :::");
 									Janus.debug(JSON.stringify(stream));
+								
 									if($('#peervideo').length === 0) {
 										$('#videos').removeClass('hide').show();
-										$('#videoright').append('<video class="rounded centered hide" id="peervideo" width=320 height=240 autoplay/>');
+									//	$('#videoright').append('<video class="rounded centered hide" id="peervideo" width=320 height=240 autoplay/>');
+										$('#bodytag').append('<video class="rounded centered hide" id="peervideo" width=320 height=240 autoplay/>');
+										
 										// Show the video, hide the spinner and show the resolution when we get a playing event
+										
+										
+
 										$("#peervideo").bind("playing", function () {
 											$('#waitingvideo').remove();
 											$('#peervideo').removeClass('hide');
@@ -238,7 +259,10 @@ $(document).ready(function() {
 													$('#curres').removeClass('hide').text(width+'x'+height).show();
 												}, 2000);
 											}
+											
+
 										});
+									
 									}
 									Janus.attachMediaStream($('#peervideo').get(0), stream);
 									var videoTracks = stream.getVideoTracks();
@@ -285,6 +309,7 @@ $(document).ready(function() {
 										echotest.send({"message": { "bitrate": bitrate }});
 										return false;
 									});
+
 									if(adapter.browserDetails.browser === "chrome" || adapter.browserDetails.browser === "firefox") {
 										$('#curbitrate').removeClass('hide').show();
 										bitrateTimer = setInterval(function() {
@@ -294,6 +319,7 @@ $(document).ready(function() {
 											$('#curbitrate').text(bitrate);
 										}, 1000);
 									}
+
 								},
 								ondataopen: function(data) {
 									Janus.log("The DataChannel is available!");
@@ -332,9 +358,44 @@ $(document).ready(function() {
 						window.location.reload();
 					}
 				});
-		});
-	}});
-});
+		//});
+}
+
+function fullscreen(){
+	alert('going full screen');
+  if (
+    document.fullscreenElement ||
+    document.webkitFullscreenElement ||
+    document.mozFullScreenElement ||
+    document.msFullscreenElement
+  ) {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    }
+  } else {
+    element = $('#videos').get(0);
+    if (element.requestFullscreen) {
+      req = element.requestFullscreen();
+      call(req);
+    } else if (element.mozRequestFullScreen) {
+     req =  element.mozRequestFullScreen();
+     call(req);
+    } else if (element.webkitRequestFullscreen) {
+      req = element.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+      alert('webkit');
+      call(req);
+    } else if (element.msRequestFullscreen) {
+      req =  element.msRequestFullscreen();
+      call(req);
+    }
+  }
+}
 
 function checkEnter(event) {
 	var theCode = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;

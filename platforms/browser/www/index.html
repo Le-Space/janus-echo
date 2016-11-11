@@ -37,7 +37,7 @@
 <link rel="stylesheet" href="css/demo.css" type="text/css"/>
 <link rel="stylesheet" href="css/font-awesome.css" type="text/css"/>
 </head>
-<body >
+<body id="bodytag">
 
 <!-- <a href="https://github.com/meetecho/janus-gateway"><img style="position: absolute; top: 0; left: 0; border: 0; z-index: 1001;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a> -->
 
@@ -47,11 +47,12 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-			<div class="page-header">
+<!-- 			<div class="page-header">
 				<h1>Echo Test
-					<button class="btn btn-default" autocomplete="off" id="start">Start</button>
-				</h1>
-			</div>
+					 <button class="btn btn-default" autocomplete="off" id="start">Start</button> 
+					 <button class="btn btn-default" autocomplete="off" id="toggle_fullscreen">Fullscreen</button> 
+				</h1> 
+			</div> -->
 <!-- 			<div class="container" id="details">
 				<div class="row">
 					<div class="col-md-12">
@@ -79,13 +80,13 @@
 					</div>
 				</div>
 			</div> -->
-			<div class="container hide" id="videos">
+<!-- 			<div class="container hide" id="videos">
 				<div class="row">
 					<div class="col-md-6">
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<h3 class="panel-title">Local Stream
-		<!-- 							<div class="btn-group btn-group-xs pull-right hide">
+								<h3 class="panel-title">Local Stream 
+							<div class="btn-group btn-group-xs pull-right hide">
 										<button class="btn btn-danger" autocomplete="off" id="toggleaudio">Disable audio</button>
 										<button class="btn btn-danger" autocomplete="off" id="togglevideo">Disable video</button>
 										<div class="btn-group btn-group-xs">
@@ -102,32 +103,33 @@
 												<li><a href="#" id="2000">Cap to 2mbit</a></li>
 											</ul>
 										</div>
-									</div> -->
-								</h3>
-							</div>
+									</div> 
+ 								</h3>
+							</div> 
 							<div class="panel-body" id="videoleft"></div>
 						</div>
-<!-- 						<div class="input-group margin-bottom-sm">
+						<div class="input-group margin-bottom-sm">
 							<span class="input-group-addon"><i class="fa fa-cloud-upload fa-fw"></i></span>
-							<input class="form-control" type="text" placeholder="Write a DataChannel message" autocomplete="off" id="datasend" onkeypress="return checkEnter(event);" disabled></input>
-						</div> -->
+							<input class="form-control" type="text" placeholder="Write a DataChannel message" autocomplete="off" id="datasend" onkeypress="return checkEnter(event);" disabled>	
+							</input>
+						</div> 
 					</div>
 					<div class="col-md-6">
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<h3 class="panel-title">Remote Stream 
-						<!-- 		<span class="label label-primary hide" id="curres"></span> <span class="label label-info hide" id="curbitrate"></span> -->
-								</h3>
+								<h3 class="panel-title">Remote Stream  
+								<span class="label label-primary hide" id="curres"></span> <span class="label label-info hide" id="curbitrate"></span> 
+								</h3> 
 							</div>
 							<div class="panel-body" id="videoright"></div>
 						</div>
-<!-- 						<div class="input-group margin-bottom-sm">
+ 						<div class="input-group margin-bottom-sm">
 							<span class="input-group-addon"><i class="fa fa-cloud-download fa-fw"></i></span>
 							<input class="form-control" type="text" id="datarecv" disabled></input>
-						</div> -->
+						</div> 
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 
